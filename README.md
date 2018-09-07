@@ -1,4 +1,4 @@
-##To run tests
+## To run tests
 ##### 1. Set up virtual environment:
 
 `virtualenv venv`
