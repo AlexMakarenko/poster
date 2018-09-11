@@ -11,6 +11,6 @@
 
 `pip install -r requirements.txt`
 
-### 4. Run tests
+### 4. Run tests with logs
 
-`pytest tests/`
+`pytest -s tests/`
