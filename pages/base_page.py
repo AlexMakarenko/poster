@@ -1,5 +1,6 @@
 from elementium.drivers.se import SeElements
 from selenium.webdriver.support.ui import WebDriverWait
+from config import log
 
 
 class BasePage:
@@ -9,6 +10,7 @@ class BasePage:
         self.wait = WebDriverWait(self.driver, 5)
 
     def open_page(self, url: str):
+        log.info('Opening page: {}'.format(url))
         self.se.navigate(url)
 
 

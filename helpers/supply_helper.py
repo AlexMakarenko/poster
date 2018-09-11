@@ -1,5 +1,3 @@
-from time import sleep
-
 from pages import NewSupplyPage, SupplyPage
 
 
@@ -7,10 +5,10 @@ def add_new_supply(driver, supply_test_data: dict):
     page = NewSupplyPage(driver)
     for key, product in supply_test_data.items():
         page.open_drop_down_list_of_products()
-        sleep(0.5)
-        page.choose_product_in_drop_down_list(product['name'])
+        page.is_drop_down_list_opened()
+        page.choose_product_from_drop_down_list(product['name'])
         if not page.check_product_selected(product['name']):
-            page.choose_product_in_drop_down_list(product['name'])
+            page.choose_product_from_drop_down_list(product['name'])
         page.enter_count(product['count'])
         page.enter_cost(product['cost'])
         if key != 'product5':
